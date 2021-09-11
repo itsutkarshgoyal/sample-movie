@@ -1,0 +1,16 @@
+<mat-grid-list cols="3">
+<div *ngFor="let movie of movieList">
+    <mat-grid-tile>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>{{ ( movie.Title.length > 25) ? ( movie.Title | slice:0:25) + '...' : movie.Title }}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="movie.Poster" alt="{{ product.productName }"  (click)="movieDetail(movie.imdbID)"> 
+      <mat-card-content>
+        <p>ImdbRating : {{movie.imdbRating}} &nbsp; Language : {{movie.Language}}</p>
+        <p>Location : {{movie.Location}}</p>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  </div>
+</mat-grid-list>

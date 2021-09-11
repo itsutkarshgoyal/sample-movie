@@ -1,0 +1,14 @@
+ <div class="input-group rounded">
+    <input type="search" class="form-control rounded" style="text-align: center;" placeholder="Search by Movie Title" aria-label="Search"
+      aria-describedby="search-addon" #input (change)= "searchText(input)" />
+    <span class="input-group-text border-0" id="search-addon">
+      <fa-icon [icon]="fasearch"></fa-icon>
+    </span>
+  </div>
+  <mat-form-field appearance="fill">
+    <mat-label>Filter by Language/Location</mat-label>
+    <mat-select #filterValue  (selectionChange)="changeFilter($event.value)">
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let filters of filterList" [value]="filters">{{filters}}</mat-option>
+    </mat-select>
+  </mat-form-field>
