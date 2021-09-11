@@ -7,7 +7,7 @@
   </div>
   <mat-form-field appearance="fill">
     <mat-label>Filter by Language/Location</mat-label>
-    <mat-select #filterValue  (selectionChange)="changeFilter($event.value)">
+    <mat-select id=moviefilter #filterValue  (selectionChange)="changeFilter($event.value)">
       <mat-option>None</mat-option>
       <mat-option *ngFor="let filters of filterList" [value]="filters">{{filters}}</mat-option>
     </mat-select>

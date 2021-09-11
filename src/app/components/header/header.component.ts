@@ -19,12 +19,10 @@ export class HeaderComponent implements OnInit {
 
   searchText(text: HTMLInputElement)
   {
-    this.router.navigate([""]);
     this._movieService.searchMovie(text.value);
   }
+
   changeFilter(value:string){
-    console.log(value);
-    this.router.navigate([""]);
     this._movieService.filterMovie(value);
   }
 }

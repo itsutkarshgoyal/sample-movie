@@ -26,10 +26,9 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('sample-movie');
   });
 
-  it('should render title', () => {
+  it(`should have as title 'sample-movie'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('sample-movie app is running!');
+    const app = fixture.componentInstance;
+    expect(app.title).toEqual('sample-movie');
   });
 });
