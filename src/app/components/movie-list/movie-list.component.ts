@@ -15,7 +15,9 @@ export class MovieListComponent implements OnInit,OnDestroy {
 
   public movieList :any = [];
   filterMovie : Movie[] = [];
-  private subscription: Subscription;
+  private movie_subscription: Subscription;
+  private searchText_subscription: Subscription;
+  private filterText_subscription: Subscription;
 
   ngOnInit(): void {
     this.loadData();
@@ -26,7 +28,7 @@ export class MovieListComponent implements OnInit,OnDestroy {
   // Load Data
   loadData()
   {
-    this.subscription = this._movieService.getMovies().subscribe(data => {
+    this.movie_subscription = this._movieService.getMovies().subscribe(data => {
       if(data){
       this.movieList = JSON.parse(JSON.stringify(data))
       this.filterMovie = this.movieList
@@ -56,7 +58,6 @@ export class MovieListComponent implements OnInit,OnDestroy {
 
     // filter by language/location
     filterDropdown(filter: string) {
-      this.movieList = JSON.parse(JSON.stringify(this.filterMovie));
   
       if(!filter)
       {
@@ -70,6 +71,8 @@ export class MovieListComponent implements OnInit,OnDestroy {
     }
 
   ngOnDestroy():void{
-    this.subscription.unsubscribe();
+    this.movie_subscription.unsubscribe();
+    this.searchText_subscription.unsubscribe();
+    this.filterText_subscription.unsubscribe();
   }
 }
