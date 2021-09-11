@@ -61,7 +61,7 @@ export class MovieListComponent implements OnInit,OnDestroy {
   
       if(!filter)
       {
-        return
+         return
       }else if(filter ==="Language"){
         this.movieList =  this.movieList.sort((a, b) => (a.Language  > b.Language ) ? 1 : -1);
       }else {
