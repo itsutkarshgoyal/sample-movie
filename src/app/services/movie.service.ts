@@ -11,11 +11,12 @@ export class MovieService {
 
   constructor(private readonly http: HttpClient) { }
 
-  private MOVIE_SERVICE_BASE_URL = "/assets/";
+ // private MOVIE_SERVICE_BASE_URL = "/assets/";
+  private MOVIE_SERVICE_BASE_URL = "http://localhost:54383/Movie";
 
     // Gets the list of products.
     public getMovies(): Observable<Movie[]> {
-      const url = `${this.MOVIE_SERVICE_BASE_URL}/movies.json`;
+      const url = `${this.MOVIE_SERVICE_BASE_URL}/movie-list`;
       return this.http.get<Movie[]>(url);
     }
 

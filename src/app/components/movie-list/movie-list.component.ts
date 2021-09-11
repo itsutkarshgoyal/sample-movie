@@ -52,7 +52,7 @@ export class MovieListComponent implements OnInit,OnDestroy {
     }
 
     this.movieList =  this.movieList.filter((movie: Movie) =>{
-        return movie.Title.toLowerCase().includes(filterBy)
+        return movie.title.toLowerCase().includes(filterBy)
     })
   }
 

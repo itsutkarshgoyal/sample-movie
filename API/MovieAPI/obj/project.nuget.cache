@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "C1p0eGXTK3XEfjPViTWY/9gWB2DAb2aaVA1rczgfaurgQBxqgu8U/ZcqzItRio0EfRkd5lp2djWV8+rtBuR98A==",
+  "success": true,
+  "projectFilePath": "D:\\angular\\sample-movie\\API\\MovieAPI\\MovieAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\utkarshgoyal\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

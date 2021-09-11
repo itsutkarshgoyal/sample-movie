@@ -1,21 +1,21 @@
 <section class="buy-grid container" *ngIf="movie">
     <header class="header">
-      <h1>{{movie.Title}}</h1>
+      <h1>{{movie.title}}</h1>
     </header>
     <div class="hero-image-wrapper">
-      <img src="{{movie.Poster}}" class="hero-image-element" style="height: 400px;width: 400px;" alt="alt">
+      <img src="{{movie.poster}}" class="hero-image-element" style="height: 400px;width: 400px;" alt="alt">
     </div>
     <div class="specs-table">
       <div class="specs-table-row">
-        <div class="spec-table-description"> {{movie.Plot}}</div>
+        <div class="spec-table-description"> {{movie.plot}}</div>
       </div>
       <div class="specs-table-row">
         <div class="spec-table-label">Language</div>
-        <div class="spec-table-description"> {{movie.Language}}</div>
+        <div class="spec-table-description"> {{movie.language}}</div>
       </div>
       <div class="specs-table-row">
         <div class="spec-table-label">Location</div>
-        <div class="spec-table-description"> {{movie.Location}}</div>
+        <div class="spec-table-description"> {{movie.location}}</div>
       </div>
     </div>
   </section>
