@@ -72,7 +72,9 @@ export class MovieListComponent implements OnInit,OnDestroy {
 
   ngOnDestroy():void{
     this.movie_subscription.unsubscribe();
+    if(this.searchText_subscription)
     this.searchText_subscription.unsubscribe();
+    if(this.filterText_subscription)
     this.filterText_subscription.unsubscribe();
   }
 }

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using MovieAPI.Services;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -9,27 +10,27 @@ using System.Threading.Tasks;
 
 namespace MovieAPI.Controllers
 {
-    [ApiController]
-    [Route("[controller]")]
-    public class MovieController : ControllerBase
+  [ApiController]
+  [Route("[controller]")]
+  public class MovieController : ControllerBase
+  {
+
+    private readonly ILogger<MovieController> _logger;
+    private readonly IMovieService _movieService;
+
+
+    public MovieController(ILogger<MovieController> logger, IMovieService movieService)
     {
- 
-        private readonly ILogger<MovieController> _logger;
+      _logger = logger;
+      _movieService = movieService;
+    }
 
-        public MovieController(ILogger<MovieController> logger)
-        {
-            _logger = logger;
-        }
-
-        [HttpGet]
-        [Route("movie-list")]
-        public IEnumerable<Movie> Get()
-        {
-          var folderDetails = Path.Combine(Directory.GetCurrentDirectory(), "movies.json");
-          var JSON = System.IO.File.ReadAllText(folderDetails);
-          var moviesList = JsonConvert.DeserializeObject<Movie[]>(JSON);
-          return moviesList;
-        }
+    [HttpGet]
+    [Route("movie-list")]
+    public IEnumerable<Movie> Get()
+    {
+      return this._movieService.GetMoviesList();
+    }
 
   }
 }

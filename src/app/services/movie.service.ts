@@ -11,7 +11,6 @@ export class MovieService {
 
   constructor(private readonly http: HttpClient) { }
 
- // private MOVIE_SERVICE_BASE_URL = "/assets/";
   private MOVIE_SERVICE_BASE_URL = "http://localhost:54383/Movie";
 
     // Gets the list of products.
